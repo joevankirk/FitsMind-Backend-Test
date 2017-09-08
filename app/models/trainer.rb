@@ -1,2 +1,2 @@
-class Trainer < ApplicationRecord
+class Trainer < User
 end
