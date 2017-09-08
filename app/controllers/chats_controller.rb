@@ -12,7 +12,7 @@ class ChatsController < ApplicationController
   def new
     @chat = current_user.chats.new
     @chats = Chat.all
-
+    # @users = User.all
   end
 
   def create

@@ -1,9 +1,10 @@
 <h1>Form goes here</h1>
 <%= @chats.last.id %>
 
-<%= form_for(@chat) do |f| %>
-
-   <%= f.submit %>
+<%= simple_form_for(@chat) do |f| %>
+  <%= f.input :user_2_id, label: "Send to", collection: [@chats.last.user1.first_name] %>
+  <%= f.hidden_field :user_1_id, value: "current_user.id" %>
+  <%= f.submit %>
 <% end %>
 
 
