@@ -29,7 +29,6 @@ class MessagesController < ApplicationController
     @chat = Chat.find(params[:chat_id])
   end
 
-
   def message_params
     params.require(:message).permit(:content, :sender_id, :recipient_id, :chat_id)
   end

@@ -10,11 +10,15 @@ class ChatsController < ApplicationController
   end
 
   def new
-    @chat = Chat.new
+    @chat = current_user.chats.new
+    @chats = Chat.all
+
   end
 
   def create
     @chat = Chat.new(chat_params)
+    @message = @chat.build_messages(message_params)
+    @message.save
   end
 
   private
@@ -29,6 +33,10 @@ class ChatsController < ApplicationController
 
   def set_user
     @user = User.find(current_user[:id])
+  end
+
+  def message_params
+    params.require(:message).permit(:content, :sender_id, :recipient_id, :chat_id)
   end
 
 end

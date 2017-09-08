@@ -1,2 +1,12 @@
 <h1>Form goes here</h1>
-<%= @chat.inspect %>
+<%= @chats.last.id %>
+
+<%= form_for(@chat) do |f| %>
+
+   <%= f.submit %>
+<% end %>
+
+
+<%# f.fields_for :messages do |a| %>
+      <%# a.input :content %>
+   <%# end %>
