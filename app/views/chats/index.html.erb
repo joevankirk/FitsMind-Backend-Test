@@ -1,7 +1,19 @@
 <div class="container">
   <h2>Hey, <%= current_user.first_name %></h2>
-
-  <%= @chats.count %>
+  <div class="message">
+    <% @chats.each do |c| %>
+      <div class="message-name">
+        <% if c.user1 == current_user.id %>
+          <%= c.user1.first_name %>
+        <% else %>
+          <%= c.user2.first_name %>
+        <% end %>
+      </div>
+      <div class="message-body">
+        <%= c.messages.last.content %>
+      </div>
+    <% end %>
+  </div>
   ||
   <%= link_to "New chat", new_user_chat_path %>
   ||
