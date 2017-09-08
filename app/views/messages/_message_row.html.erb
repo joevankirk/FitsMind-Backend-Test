@@ -1,11 +1,12 @@
-<div class="message-row" id="message_<%= message.id %>">
+<div class="message">
   <% if current_user.id == message.sender_id %>
-    <div class="chat sent">
-      <%# User.find(message.sender_id).first_name %>
+    <div class="message-name">
+      <h3><%= User.find(message.sender_id).first_name %></h3>
       <p><%=  message.content %></p>
     </div>
   <% else %>
-    <div class="chat received">
+    <div class="message-body">
+      <h3>You</h3>
       <p><%=  message.content %></p>
     </div>
   <% end %>
