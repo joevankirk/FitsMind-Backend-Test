@@ -1,17 +1,12 @@
 <div class="container text-center">
-  <% if !user_signed_in? %>
-    <h1>Welcome to Fitsmind Gym!</h1>
-    <div class="card-home">
-      <%= image_tag "https://static.pexels.com/photos/414029/pexels-photo-414029.jpeg", id: "img-home" %>
-      <div class="links-home">
-        <%= link_to "Trainer sign-up", new_trainer_registration_path, class: "btn btn-primary" %>
-        <p><%= link_to "Already a trainer?", new_trainer_session_path, class: "card-session" %></p>
-        <%= link_to "Customer sign-up", new_customer_registration_path, class: "btn btn-success"%>
-        <p><%= link_to "Already a customer?", new_customer_session_path, class: "card-session" %></p>
-      </div>
+  <h1>Welcome to Fitsmind Gym!</h1>
+  <div class="card-home">
+    <%= image_tag "https://static.pexels.com/photos/414029/pexels-photo-414029.jpeg", id: "img-home" %>
+    <div class="links-home">
+      <%= link_to "Trainer sign-up", new_trainer_registration_path, class: "btn btn-primary" %>
+      <p><%= link_to "Already a trainer?", new_trainer_session_path, class: "card-session" %></p>
+      <%= link_to "Customer sign-up", new_customer_registration_path, class: "btn btn-success"%>
+      <p><%= link_to "Already a customer?", new_customer_session_path, class: "card-session" %></p>
     </div>
-  <% else %>
-    <h2>Hey, <%= current_user.first_name %></h2>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <% end %>
+  </div>
 </div>

@@ -1,0 +1,5 @@
+<h2>Hey, <%= current_user.first_name %></h2>
+
+<%= @chats.count %>
+
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
