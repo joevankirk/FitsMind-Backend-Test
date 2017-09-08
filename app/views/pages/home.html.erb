@@ -10,11 +10,8 @@
         <p><%= link_to "Already a customer?", new_customer_session_path, class: "card-session" %></p>
       </div>
     </div>
-  <% elsif trainer_signed_in? %>
-    <h2>Hey trainer</h2>
-    <%= link_to "Sign out", destroy_trainer_session_path, method: :delete %>
   <% else %>
-    <h2>Hey customer</h2>
-    <%= link_to "Sign out", destroy_customer_session_path, method: :delete %>
+    <h2>Hey, <%= current_user.first_name %></h2>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <% end %>
 </div>
