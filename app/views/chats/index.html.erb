@@ -4,9 +4,9 @@
     <% @chats.each do |c| %>
       <div class="message-name">
         <% if c.user1 == current_user.id %>
-          <%= c.user1.first_name %>
+          <%= link_to c.user1.first_name, user_chat_messages_path(current_user, c) %>
         <% else %>
-          <%= c.user2.first_name %>
+          <%= link_to c.user2.first_name, user_chat_messages_path(current_user, c) %>
         <% end %>
       </div>
       <div class="message-body">
