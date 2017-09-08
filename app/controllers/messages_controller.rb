@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
       recipient_id = @chat.user_1_id
       @recipient = User.find(recipient_id)
     end
-    @message = current_user.messages.build
+    # @message = current_user.messages.build
   end
 
   def create

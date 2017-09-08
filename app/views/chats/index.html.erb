@@ -2,6 +2,8 @@
   <h2>Hey, <%= current_user.first_name %></h2>
 
   <%= @chats.count %>
-
+  ||
+  <%= link_to "New chat", new_user_chat_path %>
+  ||
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 </div>
